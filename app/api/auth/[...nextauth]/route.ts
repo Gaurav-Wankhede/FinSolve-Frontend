@@ -30,7 +30,7 @@ export const authOptions = {
         // Otherwise get token from backend
         try {
           console.log("Fetching token from backend for:", credentials.username);
-          const res = await fetch("http://127.0.0.1:8000/login", {
+          const res = await fetch("https://fin-solve-backend.vercel.app/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

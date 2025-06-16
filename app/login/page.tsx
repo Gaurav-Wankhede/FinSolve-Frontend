@@ -25,7 +25,7 @@ export default function LoginPage() {
       console.log("Logging in with username:", username);
       
       // First call the backend API to get the token
-      const apiResponse = await fetch("http://127.0.0.1:8000/login", {
+      const apiResponse = await fetch("https://fin-solve-backend.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

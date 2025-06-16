@@ -84,7 +84,7 @@ export default function ChatInterface({ modelId }: ChatInterfaceProps) {
 
       console.log("Sending request payload:", JSON.stringify(requestPayload, null, 2));
 
-      const response = await fetch("http://127.0.0.1:8000/api/v1/chat", {
+      const response = await fetch("https://fin-solve-backend.vercel.app/api/v1/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,10 +96,12 @@ export default function ChatInterface({ modelId }: ChatInterfaceProps) {
       if (response.ok) {
         const data: ChatResponse = await response.json();
         
-        // Add bot message
+        // Add bot message with proper handling for empty responses
+        const defaultMessage = "I don't have access to that information for your current role. You may not have permission to view this data.";
+        
         const botMessage: Message = {
           id: (Date.now() + 1).toString(),
-          content: data.answer,
+          content: data.answer && data.answer.trim() ? data.answer : defaultMessage,
           isUser: false,
           timestamp: new Date(),
           sources: data.source_documents,
@@ -208,4 +210,4 @@ export default function ChatInterface({ modelId }: ChatInterfaceProps) {
       </div>
     </div>
   );
-} 
+}

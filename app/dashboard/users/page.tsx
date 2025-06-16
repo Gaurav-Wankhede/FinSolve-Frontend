@@ -59,7 +59,7 @@ export default function UsersPage() {
   const fetchUsers = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://127.0.0.1:8000/user", {
+      const response = await fetch("https://fin-solve-backend.vercel.app/user", {
         headers: {
           Authorization: `Bearer ${sessionData?.user?.accessToken}`,
         },
@@ -91,8 +91,8 @@ export default function UsersPage() {
     
     try {
       const endpoint = editingUser 
-        ? `http://127.0.0.1:8000/users/${editingUser._id}` 
-        : "http://127.0.0.1:8000/users";
+        ? `https://fin-solve-backend.vercel.app/users/${editingUser._id}` 
+        : "https://fin-solve-backend.vercel.app/users";
       
       const method = editingUser ? "PUT" : "POST";
       

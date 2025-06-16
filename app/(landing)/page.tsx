@@ -18,7 +18,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-4 mt-4">
             <Link href="/login" className="px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition">Try Demo</Link>
-            <Link href="/challenge" className="px-6 py-3 border border-blue-700 text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition">Learn More</Link>
+            <Link href="https://codebasics.io/challenge/codebasics-gen-ai-data-science-resume-project-challenge" className="px-6 py-3 border border-blue-700 text-blue-700 rounded-lg font-semibold hover:bg-blue-50 transition">Learn More</Link>
           </div>
         </div>
         <div className="flex-1 flex justify-center mt-10 md:mt-0">
@@ -48,9 +48,22 @@ export default function Home() {
             <Link href="/login" className="px-8 py-4 bg-white text-blue-700 rounded-lg font-semibold shadow-lg hover:bg-blue-50 transition">
               Try the Demo
             </Link>
-            <Link href="/github" className="px-8 py-4 border border-white text-white rounded-lg font-semibold hover:bg-blue-700 transition">
-              View on GitHub
-            </Link>
+            <a
+              href="https://github.com/Gaurav-Wankhede/FinSolve-Backend.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 border border-white text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+            >
+              Backend GitHub
+            </a>
+            <a
+              href="https://github.com/Gaurav-Wankhede/FinSolve-Frontend.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 border border-white text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+            >
+              Frontend GitHub
+            </a>
           </div>
         </div>
       </section>

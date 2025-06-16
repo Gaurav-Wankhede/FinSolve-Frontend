@@ -50,7 +50,7 @@ export default function UploadPage() {
 
   const fetchDocuments = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/documents", {
+      const response = await fetch("https://fin-solve-backend.vercel.app/documents", {
         headers: {
           Authorization: `Bearer ${sessionData?.user?.accessToken}`,
         },
@@ -90,7 +90,7 @@ export default function UploadPage() {
         formData.append("allowed_roles", allowedRoles);
       }
       
-      const response = await fetch("http://127.0.0.1:8000/upload", {
+      const response = await fetch("https://fin-solve-backend.vercel.app/upload", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${sessionData?.user?.accessToken}`,
