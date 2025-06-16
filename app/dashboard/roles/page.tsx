@@ -131,8 +131,8 @@ export default function RolesPage() {
     
     try {
       const endpoint = editingRole 
-        ? `http://127.0.0.1:8000/roles/${editingRole}` 
-        : "http://127.0.0.1:8000/roles";
+        ? `https://fin-solve-backend.vercel.app/roles/${editingRole}` 
+        : "https://fin-solve-backend.vercel.app/roles";
       
       const method = editingRole ? "PUT" : "POST";
       
