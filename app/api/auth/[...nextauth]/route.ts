@@ -2,6 +2,8 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions = {
+  // Add the secret configuration
+  secret: process.env.NEXTAUTH_SECRET || "temporary-fallback-secret-for-development-only",
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -27,7 +29,7 @@ export const authOptions = {
           };
         }
 
-        // Otherwise get token from backend
+        // Otherwise get token from backend - updated to use Vercel backend URL
         try {
           console.log("Fetching token from backend for:", credentials.username);
           const res = await fetch("https://fin-solve-backend.vercel.app/login", {
@@ -82,7 +84,8 @@ export const authOptions = {
   pages: {
     signIn: "/login", // Custom login page
   },
-  debug: true, // Enable debug mode
+  // Only enable debug in development
+  debug: process.env.NODE_ENV === "development",
 };
 
 const handler = NextAuth(authOptions);
