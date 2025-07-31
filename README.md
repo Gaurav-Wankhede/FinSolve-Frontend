@@ -73,7 +73,7 @@ frontend/
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/finsolve-rag.git
+   git clone https://github.com/Gaurav-Wankhede/gaurav-wankhede-frontend.git # Rename with finsolve-rag
    cd finsolve-rag/frontend
    ```
 
